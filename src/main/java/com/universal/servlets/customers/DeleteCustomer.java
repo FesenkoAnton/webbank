@@ -22,6 +22,6 @@ public class DeleteCustomer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         customerDAO.deleteCustomer(Long.valueOf(request.getParameter("id")));
 
-        response.sendRedirect(String.format("%s%s", request.getContextPath(), "/output"));
+        response.sendRedirect("/output");
     }
 }
