@@ -39,7 +39,7 @@
             <td>${customer.phone}</td>
             <td>
                 <a href="${pageContext.servletContext.contextPath}/customer/update?id=${customer.id}">Update customer</a>
-                <a href="${pageContext.servletContext.contextPath}/out/customers/DeleteCustomer.jsp">Delete customer</a>
+                <a href="${pageContext.servletContext.contextPath}/customer/delete?id=${customer.id}">Delete customer</a>
             </td>
         </tr>
     </c:forEach>

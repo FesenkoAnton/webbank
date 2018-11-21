@@ -11,19 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UpdateCustomer extends HttpServlet {
-
+public class DeleteCustomer extends HttpServlet {
     CustomerDAO customerDAO = new CustomerStatementDAO();
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        customerDAO.deleteCustomer(Long.valueOf(request.getParameter("id")));
 
-        Customer customer = customerDAO.getCustomer(Long.valueOf(request.getParameter("id")));
-        request.setAttribute("customer", customer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/out/customers/UpdateCustomer.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect(String.format("%s%s", request.getContextPath(), "/output"));
     }
 }

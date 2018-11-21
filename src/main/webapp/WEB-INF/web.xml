@@ -37,6 +37,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>DeleteCustomer</servlet-name>
+        <servlet-class>com.universal.servlets.customers.DeleteCustomer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteCustomer</servlet-name>
+        <url-pattern>/customer/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Outcust</servlet-name>
         <servlet-class>com.universal.servlets.OutCust</servlet-class>
     </servlet>

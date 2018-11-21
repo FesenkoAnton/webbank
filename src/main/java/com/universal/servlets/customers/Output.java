@@ -16,11 +16,6 @@ import java.util.List;
 
 public class Output extends HttpServlet {
 
-//    private String message;
-//
-//    public void init() throws ServletException{
-//        message="Hello world 11111111111";
-//    }
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         CustomerDAO customerDAO = new CustomerStatementDAO();
@@ -29,7 +24,5 @@ public class Output extends HttpServlet {
         request.setAttribute("customers",customers);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/out/customers/Customer.jsp");
         dispatcher.forward(request,response);
-//        PrintWriter out = response.getWriter();
-//        out.println("<h1>"+message+"</h1>");
     }
 }
