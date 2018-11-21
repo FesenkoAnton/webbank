@@ -20,7 +20,8 @@ public class UpdateCustomer extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println(getServletContext().getRealPath(request.getServletPath()));
+        System.out.println(request.getRemoteAddr());
         Customer customer = customerDAO.getCustomer(Long.valueOf(request.getParameter("id")));
         request.setAttribute("customer", customer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/out/customers/UpdateCustomer.jsp");
